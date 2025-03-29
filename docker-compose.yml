@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: php_app
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+
+  db:
+    build: ./sql    #Build from the sql directory
+    container_name: php_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sampleuser
+      MYSQL_PASSWORD: samplepass
+    ports:
+      - "3306:3306"
+
