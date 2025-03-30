@@ -1,38 +1,37 @@
-# PHP 7.1 sample application
+# PHP 7.1 sample application and MariaDB running in Docker
 
-Sample PHP applications that uses:
-* Dependency Injection
-* Apache routing
-* Composer (aka: Not reinventing the wheel)
+Twitter like application were inter-galactic characters exchange opinions!
+
+Deployed in two docker containers. One for the PHP v7.1 app an another one for the MariaDB database. 
 
 ## Requirements
 
 * Unix-like operating systems
-* Apache
-* MariaDB/MySQL
-* PHP >= 7.1
-* Command line tools `make` & `wget`
+* Docker 
 
 ## Setup
 
-1. Run `make` from project root.
-2. Create a 'sampleuser' MariaDB/MySQL account, by default, application is configured to use password 'samplepass'.
-3. Create the 'sample' database and load [sql/db.sql](/sql/db.sql).
-4. Configure Apache:
-```apache
-<VirtualHost *:80>
-    ServerName %application.host.name%
-    DocumentRoot /%path-to-repository%/web
+1. Clone the repository 
 
-    <Directory /%path-to-repository%>
-        Require all granted
-        AllowOverride all
-    </Directory>
+```bash
+git clone https://github.com/CristianM9999/php-sample-application-cmr.git
+cd php-sample-application-cmr/
+```
+2. Change directory
 
-    php_admin_value include_path "/%path-to-repository%/"
-
-    Include /%path-to-repository%/config/vhost.conf
-</VirtualHost>
+```bash
+cd php-sample-application-cmr/
 ```
 
-You are all set, point your browser to http://%application.host.name%/
+3. Run the docker compose
+
+```bash
+sudo docker compose up --build
+```
+4. Check that both containers were started succesfully: 
+
+```bash
+sudo docker ps
+```
+
+You are all set, point your browser to http://localhost/ 
