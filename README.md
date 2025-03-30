@@ -15,7 +15,6 @@ Deployed in two docker containers. One for the PHP v7.1 app an another one for t
 
 ```bash
 git clone https://github.com/CristianM9999/php-sample-application-cmr.git
-cd php-sample-application-cmr/
 ```
 2. Change directory
 
