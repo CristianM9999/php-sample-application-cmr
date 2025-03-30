@@ -1,6 +1,6 @@
 # PHP 7.1 sample application and MariaDB running in Docker
 
-Twitter like application were inter-galactic characters exchange opinions!
+Twitter like application where inter-galactic characters exchange opinions!
 
 Deployed in two docker containers. One for the PHP v7.1 app an another one for the MariaDB database. 
 
